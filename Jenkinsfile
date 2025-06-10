@@ -12,23 +12,18 @@ pipeline {
 			steps {
 				echo 'cloning start via jenkins'
 				sh 'ls -l'
-				echo 'cloning end'
 			}
 		}
 
 		stage('build app') {
 			steps {
-				dir('jenkins-test-project') {  // Use `dir` instead of `cd`
-					sh 'yarn install'
-					sh 'yarn build'
-				}
+				sh 'yarn install'
+				sh 'yarn build'
 			}
 		}
 		stage('run app') {
 			steps {
-				dir('jenkins-test-project') {
-						sh 'yarn start'
-				}
+				sh 'yarn start'
 			}
 		}
 	}
