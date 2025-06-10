@@ -10,9 +10,7 @@ pipeline {
 
 		stage('clone git repo') {
 			steps {
-				echo 'cloning start ...'
-				sh 'rm -rf *'
-				sh 'git clone https://github.com/JavaScriptForEverything/jenkins-test-project'
+				echo 'cloning start via jenkins'
 				sh 'ls -l'
 				echo 'cloning end'
 			}
