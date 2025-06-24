@@ -1,5 +1,5 @@
-const gretting = 'hello world repo'
+console.log( '-------------start----------' )
+const gretting = 'hello world triggered by git push'
 console.log( gretting )
-console.log( gretting )
-console.log( '-------------8----------' )
+console.log( '-------------9----------' )
 
