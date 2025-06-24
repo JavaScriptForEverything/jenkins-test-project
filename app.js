@@ -1,5 +1,5 @@
 const gretting = 'hello world'
 console.log( gretting )
 console.log( gretting )
-console.log( '-------------5----------' )
+console.log( '-------------6----------' )
 
