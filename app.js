@@ -1,5 +1,16 @@
-console.log( '-------------start----------' )
-const gretting = 'hello world triggered by git push'
-console.log( gretting )
-console.log( '-------------9----------' )
+console.log('hellow app')
+// const express = require('express')
 
+// const app = express()
+
+// app.get('/', (req, res) => {
+
+// 	res.json({
+// 		status: 'success',
+// 		data: {}
+// 	})
+// })
+
+// app.listen(5000, () => {
+// 	console.log('server is running on port: 5000')
+// })
