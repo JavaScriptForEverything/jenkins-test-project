@@ -1,30 +1,38 @@
 pipeline {
-	agent any
+  agent any
 
-	tools {
-		// Make sure this matches the name you configured in Jenkins Global Tools
-		nodejs 'NodeJS 24.1.0'
-	}
+  tools {
+    nodejs 'nodejs'
+  }
 
-	stages {
+  stages {
+    stage('Delete old repo') {
+      steps {
+        sh 'rm -rf jenkins-test-project'
+      }
+    }
 
-		stage('clone git repo') {
-			steps {
-				echo 'cloning start via jenkins'
-				sh 'ls -l'
-			}
-		}
+    stage('Clone repo') {
+      steps {
+        echo 'Cloning my repo'
+        sh 'git clone https://github.com/JavaScriptForEverything/jenkins-test-project'
+      }
+    }
 
-		stage('build app') {
-			steps {
-				sh 'yarn install'
-				sh 'yarn build'
-			}
-		}
-		stage('run app') {
-			steps {
-				sh 'yarn start'
-			}
-		}
-	}
+    stage('Install packages') {
+      steps {
+        dir('jenkins-test-project') {
+          sh 'yarn install'
+        }
+      }
+    }
+
+    stage('Running App') {
+      steps {
+        dir('jenkins-test-project') {
+          sh 'yarn start'
+        }
+      }
+    }
+  }
 }
